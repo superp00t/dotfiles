@@ -20,6 +20,6 @@ fi
 cd $CONFIG_LOCATION
 
 echo "updating keyd config"
-sudo mv config/keyd/keyd.conf /etc/keyd/default.conf
+sudo cp config/keyd/keyd.conf /etc/keyd/default.conf
 sudo systemctl restart keyd
 
