@@ -7,3 +7,6 @@ set path+=**
 set wildmenu
 
 colorscheme base16-grayscale-dark
+
+" vim-go requires this
+filetype plugin indent on
