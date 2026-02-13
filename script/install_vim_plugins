@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+set -e
+
+mkdir -p ~/.local/share/vim/pack/plugins/start
+
+# install vim-go
+mkdir -p ~/.local/share/vim/pack/plugins/start/vim-go
+cp -r deps/vim-go/* ~/.local/share/vim/pack/plugins/start/vim-go

@@ -13,3 +13,6 @@ install_keyd
 
 # install dotfiles
 install_dotfiles
+
+# install vim plugins
+install_vim_plugins
