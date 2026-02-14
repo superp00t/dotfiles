@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [ -z "$1" ]; then
+  echo "usage: install_steam_userdata <steam account ID>"  
+  exit 0
+fi
+
+STEAM_ACCOUNT_ID=$1
+
+cp -vr steam/userdata/default/ ~/.steam/steam/userdata/$STEAM_ACCOUNT_ID/

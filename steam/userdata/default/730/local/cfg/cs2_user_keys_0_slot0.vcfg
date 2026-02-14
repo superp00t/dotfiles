@@ -1,0 +1,28 @@
+"config"
+{
+	"bindings"
+	{
+		"SPACE"		"+duck"
+		"MWHEELUP"		"+jump"
+		"MWHEELDOWN"		"+jump"
+		"h"		"getout"
+		"CTRL"		"<unbound>"
+		"POV_LEFT"		"getout"
+		"1"		"slot1"
+		"j"		"takingfire"
+		"k"		"enemydown"
+		"UPARROW"		"+turnup"
+		"LEFTARROW"		"+turnleft"
+		"RIGHTARROW"		"+turnright"
+		"DOWNARROW"		"+turndown"
+		"MOUSE3"		"<unbound>"
+		"MOUSE4"		"slot3"
+		"MOUSE5"		"slot1"
+		"3"		"slot3"
+		"KP_1"		"buy vesthelm"
+		"KP_2"		"buy ssg08"
+		"a"		"+left"
+		"d"		"+right"
+		"KP_MULTIPLY"		"+voicerecord"
+	}
+}
