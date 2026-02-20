@@ -7,3 +7,8 @@ mkdir -p ~/.vim/pack/plugins/start
 # install vim-go
 mkdir -p ~/.vim/pack/plugins/start/vim-go
 cp -r deps/vim-go/* ~/.vim/pack/plugins/start/vim-go
+
+# install nerd tree
+mkdir -p ~/.vim/pack/plugins/start/nerdtree
+cp -r deps/nerdtree/* ~/.vim/pack/plugins/start/nerdtree/
+vim -u NONE -c "helptags ~/.vim/pack/plugins/start/nerdtree/doc" -c q
