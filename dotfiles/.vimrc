@@ -10,3 +10,6 @@ colorscheme base16-grayscale-dark
 
 " vim-go requires this
 filetype plugin indent on
+
+" NERDTree doesn't show hidden files by default
+let NERDTreeShowHidden=1
