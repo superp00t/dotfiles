@@ -6,7 +6,7 @@ set path+=**
 " Display all matching files when we tab complete
 set wildmenu
 
-colorscheme base16-grayscale-dark
+colorscheme codedark 
 
 " vim-go requires this
 filetype plugin indent on
