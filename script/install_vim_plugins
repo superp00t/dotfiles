@@ -12,3 +12,12 @@ cp -r deps/vim-go/* ~/.vim/pack/plugins/start/vim-go
 mkdir -p ~/.vim/pack/plugins/start/nerdtree
 cp -r deps/nerdtree/* ~/.vim/pack/plugins/start/nerdtree/
 vim -u NONE -c "helptags ~/.vim/pack/plugins/start/nerdtree/doc" -c q
+
+### trying out nvim!
+
+mkdir -p ~/.config/nvim/pack/nvim/start
+
+# install lspconfig
+#
+# mkdir -p ~/.config/nvim/pack/nvim/start/nvim-lspconfig
+# cp -r deps/nvim-lspconfig/* ~/.config/nvim/pack/nvim/start/nvim-lspconfig/
