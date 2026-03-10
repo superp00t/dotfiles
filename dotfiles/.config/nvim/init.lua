@@ -1,3 +1,5 @@
-require("montserrat.lsp")
-require("montserrat.preferences")
-require("montserrat.keys")
+require('montserrat.packages')
+require('montserrat.keys')
+require('montserrat.treesitter')
+require('montserrat.preferences')
+require('montserrat.lsp')
