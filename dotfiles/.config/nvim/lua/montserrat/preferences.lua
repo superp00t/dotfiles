@@ -18,6 +18,9 @@ vim.o.softtabstop = 4
 -- disable swap files
 vim.o.swapfile = false
 
+-- disable search highlighting (annoying!)
+vim.cmd('nohlsearch')
+
 -- configure color scheme
 local c = require('vscode.colors').get_colors()
 require('vscode').setup({

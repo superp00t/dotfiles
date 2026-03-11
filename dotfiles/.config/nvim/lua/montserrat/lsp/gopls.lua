@@ -5,18 +5,26 @@ vim.lsp.config('gopls', {
         gopls = {
             analyses = {
                 unusedparams = true,
-            },
- --           staticcheck = true,
-            completeUnimported = true,
-        },
+            }
+        }
     }
 })
 
 vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = '*.go', 
     callback = function()
-        vim.lsp.buf.format({ async = false })
-    end
+        vim.lsp.buf.format({
+			async = false
+		})
+		vim.lsp.buf.code_action({
+			context = {
+				only = {
+					'source.organizeImports'
+				}
+			},
+			apply = true
+		})
+	end
 })
 
 vim.lsp.enable('gopls')
