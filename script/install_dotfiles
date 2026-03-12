@@ -2,4 +2,6 @@
 
 set -e
 
-cp -ar dotfiles/.* $HOME/
+#cp -ar dotfiles/.* $HOME/
+
+rsync -av --progress dotfiles/ $HOME
