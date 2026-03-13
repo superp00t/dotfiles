@@ -355,7 +355,9 @@ globalkeys = gears.table.join(
    awful.key({ }, "XF86AudioLowerVolume", function ()
        awful.util.spawn("amixer set Master 9%-") end),
    awful.key({ }, "XF86AudioMute", function ()
-       awful.util.spawn("amixer sset Master toggle") end)
+       awful.util.spawn("amixer sset Master toggle") end),
+   awful.key({ }, "Pause", function()
+		awful.util.spawn("playerctl play-pause") end)
 )
 
 clientkeys = gears.table.join(
