@@ -10,3 +10,13 @@ vim.keymap.set('n', '<leader>q', ':quit<cr>')
 -- attempt to center view when navigating up and down
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
+
+-- controlling buffers
+vim.keymap.set('n', '<tab>', ':bnext<cr>')
+vim.keymap.set('n', '<S-tab>', ':bprev<cr>')
+vim.keymap.set('n', '<leader>x', ':bdelete<cr>')
+
+-- fuzzy finding with Telescope
+vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, {})
+vim.keymap.set('n', '<leader>fw', require('telescope.builtin').live_grep, {})
+vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, {})
