@@ -11,6 +11,9 @@ vim.keymap.set('n', '<leader>q', ':quit<cr>')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
+-- controlling the file explorer
+vim.keymap.set('n', '<leader>e', ':Ex<cr>')
+
 -- controlling buffers
 vim.keymap.set('n', '<tab>', ':bnext<cr>')
 vim.keymap.set('n', '<S-tab>', ':bprev<cr>')
