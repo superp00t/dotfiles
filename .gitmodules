@@ -1,9 +1,3 @@
-[submodule "vim-go"]
-	path = deps/vim-go
-	url = https://github.com/fatih/vim-go.git
 [submodule "keyd"]
 	path = deps/keyd
 	url = https://github.com/rvaiya/keyd.git
-[submodule "nerdtree"]
-	path = deps/nerdtree
-	url = https://github.com/preservim/nerdtree.git
