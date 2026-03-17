@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+rsync -av --progress --delete dotfiles/.config/nvim/ ~/.config/nvim/
+
+
+
