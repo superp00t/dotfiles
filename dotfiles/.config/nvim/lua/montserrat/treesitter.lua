@@ -3,6 +3,6 @@ vim.api.nvim_create_autocmd('FileType', {
 		'go'
 	},
 	callback = function(args)
-		pcall(vim.treesitter)
+		pcall(vim.treesitter.start)
 	end
 })
