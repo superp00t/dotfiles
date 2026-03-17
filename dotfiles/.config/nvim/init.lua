@@ -1,4 +1,5 @@
 require('montserrat.packages')
+require('montserrat.completions')
 require('montserrat.keys')
 require('montserrat.treesitter')
 require('montserrat.preferences')

@@ -8,7 +8,8 @@ vim.lsp.config('gopls', {
                 unusedparams = true,
             }
         }
-    }
+    },
+	-- capabilities = require('cmp_nvim_lsp').default_capabilities()
 })
 
 vim.api.nvim_create_autocmd('BufWritePre', {
