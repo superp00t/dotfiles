@@ -18,7 +18,13 @@ vim.o.softtabstop = 4
 -- disable swap files
 vim.o.swapfile = false
 
+-- rounded window borders
 vim.o.winborder = 'rounded'
+
+-- enable virtual lines in diagnostics
+vim.diagnostic.config({
+	virtual_lines = true
+})
 
 -- configure color scheme
 local c = require('vscode.colors').get_colors()
