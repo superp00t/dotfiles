@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+sudo renice -20 -p $(pgrep cs2 --exact)
