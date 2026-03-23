@@ -1,7 +1,7 @@
 vim.lsp.config('gopls', {
 	cmd = { 'gopls' },
 	root_markers = { 'go.mod', '.git' },
-	filetypes = { 'go', 'gomod', 'gowork', 'gotmpl' },
+	filetypes = { 'go', 'gomod' },
 	settings = {
 		gopls = {
 			analyses = {
