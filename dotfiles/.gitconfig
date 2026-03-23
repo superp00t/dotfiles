@@ -1,3 +1,5 @@
 [user]
 	email = superp00t@tutanota.com
 	name = superp00t
+[core]
+	editor = nvim
