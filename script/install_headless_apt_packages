@@ -1,0 +1,9 @@
+sudo apt install -y \
+	git \
+	build-essential \
+	clangd \
+	clang-format \
+	clang \
+	libclang-dev \
+	fzf \
+	ripgrep
