@@ -7,3 +7,11 @@ source /usr/share/doc/fzf/examples/completion.zsh
 
 # enable vim mode
 bindkey -v
+
+if [ -d "$HOME/lua-language-server/bin" ]; then
+    PATH="$HOME/lua-language-server/bin":$PATH
+fi
+
+if [ -d "$HOME/.local/bin" ]; then
+    PATH="$HOME/.local/bin":$PATH
+fi
