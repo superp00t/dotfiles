@@ -3,6 +3,12 @@ require('nvim-treesitter').install({
     'cpp'
 }):wait(300000)
 
+require('nvim-treesitter-textobjects').setup({
+    select = {
+        lookahead = true
+    }
+})
+
 vim.api.nvim_create_autocmd('FileType', {
     pattern = {
         'go',

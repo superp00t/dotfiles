@@ -27,10 +27,25 @@ vim.keymap.set('n', '<leader>fb', require('telescope.builtin').buffers, {})
 -- go to definition using LSP
 vim.keymap.set('n', 'gd', vim.lsp.buf.definition)
 
---------------------------------------------------------------------------------
--- treesitter-textobjects motions
---------------------------------------------------------------------------------
--- You can use the capture groups defined in `textobjects.scm`
+-- textobjects selection
+vim.keymap.set({ 'x', 'o' }, 'am', function()
+    require('nvim-treesitter-textobjects.select').select_textobject('@function.outer', 'textobjects')
+end)
+vim.keymap.set({ 'x', 'o' }, 'im', function()
+    require('nvim-treesitter-textobjects.select').select_textobject('@function.inner', 'textobjects')
+end)
+vim.keymap.set({ 'x', 'o' }, 'ac', function()
+    require('nvim-treesitter-textojects.select').select_textobject('@class.outer', 'textobjects')
+end)
+vim.keymap.set({ 'x', 'o' }, 'ic', function()
+    require('nvim-treesitter-textobjects.select').select_textobject('@class.inner', 'textobjects')
+end)
+-- You can also use captures from other query groups like `locals.scm`
+vim.keymap.set({ 'x', 'o' }, 'as', function()
+    require('nvim-treesitter-textobjects.select').select_textobject('@local.scope', 'locals')
+end)
+
+-- textobjects motions
 vim.keymap.set({ 'n', 'x', 'o' }, ']m', function()
     require('nvim-treesitter-textobjects.move').goto_next_start('@function.outer', 'textobjects')
 end)
