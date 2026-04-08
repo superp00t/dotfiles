@@ -11,6 +11,9 @@ vim.keymap.set('n', '<leader>q', ':quit<cr>')
 vim.keymap.set('n', '<C-d>', '<C-d>zz')
 vim.keymap.set('n', '<C-u>', '<C-u>zz')
 
+-- yank currently selected word to system clipboard on <leader>c
+vim.keymap.set('n', '<leader>c', 'viw"+y')
+
 -- controlling the file explorer
 vim.keymap.set('n', '<leader>e', ':Ex<cr>')
 
