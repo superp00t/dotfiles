@@ -8,7 +8,7 @@ vim.o.relativenumber = true
 vim.o.wrap = false
 
 -- force the sign column to always be visible
-vim.o.signcolumn = "yes"
+vim.o.signcolumn = 'yes'
 
 -- configure tabs to appear as 4 spaces
 vim.o.tabstop = 4
@@ -17,6 +17,9 @@ vim.o.softtabstop = 4
 vim.o.expandtab = true
 -- disable swap files
 vim.o.swapfile = false
+
+-- stop neovim from freezing up whenever I scroll too quickly
+vim.o.smoothscroll = true
 
 -- rounded window borders
 vim.o.winborder = 'rounded'
