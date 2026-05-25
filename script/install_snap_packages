@@ -1,1 +1,2 @@
 sudo snap install --classic --channel latest/edge nvim
+sudo snap install --classic alacritty
