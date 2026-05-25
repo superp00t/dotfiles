@@ -29,6 +29,9 @@ vim.diagnostic.config({
     virtual_lines = true
 })
 
+-- custom option: turn on/off format on save
+vim.g.montserrat_format_on_save = true
+
 -- configure color scheme
 local c = require('vscode.colors').get_colors()
 require('vscode').setup({

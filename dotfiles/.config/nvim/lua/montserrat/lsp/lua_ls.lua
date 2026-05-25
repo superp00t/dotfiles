@@ -17,9 +17,11 @@ vim.lsp.config('lua_ls', {
 vim.api.nvim_create_autocmd('BufWritePre', {
     pattern = '*.lua',
     callback = function()
-        vim.lsp.buf.format({
-            async = false
-        })
+        if vim.g.montserrat_format_on_save then
+            vim.lsp.buf.format({
+                async = false
+            })
+        end
     end
 })
 

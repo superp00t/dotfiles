@@ -2,7 +2,7 @@
 vim.g.mapleader = ' '
 
 -- save changes on <leader>w
-vim.keymap.set('n', '<leader>w', ':update<cr>')
+vim.keymap.set('n', '<leader>w', ':write<cr>')
 
 -- quit the editor on <leader>q
 vim.keymap.set('n', '<leader>q', ':quit<cr>')
@@ -24,6 +24,16 @@ vim.keymap.set('n', '<leader>e', ':Ex<cr>')
 vim.keymap.set('n', '<tab>', ':bnext<cr>')
 vim.keymap.set('n', '<S-tab>', ':bprev<cr>')
 vim.keymap.set('n', '<leader>x', ':bdelete<cr>')
+
+-- toggle format-on-save with <leader>`
+vim.keymap.set('n', '<leader>`', function()
+    vim.g.montserrat_format_on_save = not vim.g.montserrat_format_on_save
+    if vim.g.montserrat_format_on_save then
+        print('format on save is now on!')
+    else
+        print('format on save is now off!')
+    end
+end)
 
 -- fuzzy finding with Telescope
 vim.keymap.set('n', '<leader>ff', require('telescope.builtin').find_files, {})

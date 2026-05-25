@@ -8,18 +8,20 @@ vim.lsp.config('clangd', {
 vim.api.nvim_create_autocmd('BufWritePost', {
     pattern = { '*.c', '*.h', '*.cpp', '*.hpp', '*.m', '*.mm' },
     callback = function()
-        -- Save the current cursor position to prevent jumping
-        local view = vim.fn.winsaveview()
+        if vim.g.montserrat_format_on_save then
+            -- Save the current cursor position to prevent jumping
+            local view = vim.fn.winsaveview()
 
-        -- Run clang-format on the current file path
-        -- -i means "in-place" edit
-        vim.fn.system({ 'clang-format', '-i', vim.fn.expand('%:p') })
+            -- Run clang-format on the current file path
+            -- -i means "in-place" edit
+            vim.fn.system({ 'clang-format', '-i', vim.fn.expand('%:p') })
 
-        -- Reload the file buffer to show changes
-        vim.cmd('edit!')
+            -- Reload the file buffer to show changes
+            vim.cmd('edit!')
 
-        -- Restore cursor position
-        vim.fn.winrestview(view)
+            -- Restore cursor position
+            vim.fn.winrestview(view)
+        end
     end,
 })
 
