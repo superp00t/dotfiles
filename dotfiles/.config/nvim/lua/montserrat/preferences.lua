@@ -1,5 +1,5 @@
--- we have nerd fonts, most likely.
-vim.g.have_nerd_font = true
+-- turn on exrc
+vim.o.exrc = true
 
 -- turn on relative line numbers
 vim.o.relativenumber = true
