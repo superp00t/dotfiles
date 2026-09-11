@@ -8,7 +8,7 @@ CONFIG_LOCATION=$(pwd)
 # (among other things, makes Caps Lock the ESC key.)
 if ! is_service_installed "keyd.service"; then
   echo "keyd is not installed";
-  cd deps/keyd.git 
+  cd deps/keyd
   git reset --hard HEAD
   make && sudo make install
   sudo systemctl enable --now keyd
