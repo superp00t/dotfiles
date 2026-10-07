@@ -21,7 +21,7 @@ if [ -d "$HOME/go/bin" ]; then
 fi
 
 if [ -d "/usr/local/osxcross/bin" ]; then
-    PATH="/usr/local/oscross/bin":$PATH
+    PATH="/usr/local/osxcross/bin":$PATH
 fi
 
 # load .env file
