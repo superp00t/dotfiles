@@ -1,5 +1,5 @@
 vim.lsp.config('clangd', {
-    cmd = { 'clangd' },
+    cmd = { 'clangd', '--query-driver=/usr/local/osxcross/bin/*' },
     root_markers = { 'compile_commands.json', '.clangd', '.clang-tidy', '.git' },
     filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
     capabilities = require('cmp_nvim_lsp').default_capabilities()
