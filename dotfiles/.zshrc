@@ -20,6 +20,9 @@ if [ -d "$HOME/go/bin" ]; then
     PATH="$HOME/go/bin":$PATH
 fi
 
+if [ -d "/usr/local/osxcross/bin" ]; then
+    PATH="/usr/local/oscross/bin":$PATH
+fi
 
 # load .env file
 [ -f "$HOME/.env" ] && source "$HOME/.env"
