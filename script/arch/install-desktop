@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+
+sudo pacman -S --needed --noconfirm \
+	zsh \
+	git \
+	base-devel \
+	rsync \
+	keyd \
+	fastfetch \
+	neovim \
+	tree-sitter-cli \
+	firefox \
+	keepassxc \
+	cliphist \
+	jdk-openjdk \
+	waybar \
+	pavucontrol \
+	less 
+
+# keyd must be enabled
+
+sudo systemctl enable keyd.service
+sudo systemctl start keyd.service
+
+# use script/update-yay to install yay or update
+
+yay -S --needed --noconfirm \
+	minecraft-launcher \
+	mmv \
+	somewm-git

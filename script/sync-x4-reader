@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+LIBRARY=/mnt/e/Media/Book
+WALLPAPERS="/mnt/e/Media/Pictures/Wallpaper/XTEINK x4"
+READER_DRIVE=/media/jjj/2A6F-B160
+
+rsync --delete -av --progress $LIBRARY/Nonfiction/ $READER_DRIVE/Nonfiction
+rsync --delete -av --progress $LIBRARY/Fiction/ $READER_DRIVE/Fiction
+rsync --delete -av --progress $LIBRARY/Technical/ $READER_DRIVE/Technical
+
+rsync --delete -av --progress "$WALLPAPERS"/ $READER_DRIVE/sleep
