@@ -1,0 +1,13 @@
+[Unit]
+Description=Mount Eiga
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=forking
+ExecStart=/usr/bin/sshfs jjj@eiga:/ /home/jjj/eiga -o follow_symlinks,reconnect,ServerAliveInterval=15,IdentityFile=/home/jjj/.ssh/id_ed25519
+ExecStop=/usr/bin/fusermount -uz /home/jjj/eiga
+RemainAfterExit=yes
+
+[Install]
+WantedBy=graphical-session.target

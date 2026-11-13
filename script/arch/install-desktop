@@ -1,21 +1,42 @@
 #!/usr/bin/env bash
 
+if command -v flatpak >/dev/null 2>&1; then
+    echo "flatpak is installed"
+else
+    echo "flatpak is NOT installed. installing now" >&2
+    sudo pacman -S --needed --noconfirm flatpak
+fi
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
 sudo pacman -S --needed --noconfirm \
+    sshfs \
 	zsh \
+    fzf \
 	git \
 	base-devel \
 	rsync \
 	keyd \
+    alacritty \
 	fastfetch \
 	neovim \
 	tree-sitter-cli \
+    lua-language-server \
 	firefox \
 	keepassxc \
 	cliphist \
 	jdk-openjdk \
-	waybar \
 	pavucontrol \
-	less 
+	less \
+    hyprlauncher \
+    hyprpaper \
+    hyprpolkitagent \
+    imv \
+    mpv \
+    gimp \
+    signal-desktop \
+    thunar \
+    gnome-keyring
 
 # keyd must be enabled
 
@@ -27,4 +48,10 @@ sudo systemctl start keyd.service
 yay -S --needed --noconfirm \
 	minecraft-launcher \
 	mmv \
-	somewm-git
+    ashell-git \
+    jellyfin-tui \
+    waypaper
+
+# flatpaks
+
+flatpak install -y com.usebottles.bottles

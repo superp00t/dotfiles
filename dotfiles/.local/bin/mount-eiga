@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+fusermount -uz ~/eiga/
+mkdir -p ~/eiga/
+sshfs jjj@eiga:/ ~/eiga/

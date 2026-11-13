@@ -1,0 +1,212 @@
+style "scrollbar"
+
+{
+	
+    GtkRange::trough_border = 0
+    GtkRange::slider_width = 15
+
+
+    GtkRange::stepper_size = 15
+
+    GtkScrollbar::min_slider_length = 30
+  
+    engine "pixmap" 
+    {
+ 	
+	image 
+	{
+            function        = BOX
+            recolorable     = TRUE
+            detail          = "trough"
+            file            = "AquaScrollbars/vertical_trough.png"
+            border          = { 0, 0, 30, 30 }
+            stretch         = TRUE
+            orientation     = VERTICAL
+        }
+
+        image 
+	{
+            function        = BOX
+            recolorable     = TRUE
+            detail          = "trough"
+            file            = "AquaScrollbars/hor.png"
+            border          = { 30, 30, 0, 0 }
+            stretch         = TRUE
+            orientation     = HORIZONTAL
+        }
+
+        image 
+	{
+            function        = SLIDER 
+            recolorable     = TRUE
+            file            = "AquaScrollbars/hor_bg.png"
+            border          = { 0,0,0,0 }
+            stretch         = FALSE
+            overlay_file	= "AquaScrollbars/vert_zero.png"
+            overlay_border	= { 8,8,0,0 }
+            overlay_stretch	= TRUE
+            orientation     = HORIZONTAL
+        }
+
+        image 
+	{
+            function        = SLIDER
+            recolorable     = TRUE
+            file            = "AquaScrollbars/test2.png"
+            border          = { 0,0,0,0 }
+            stretch         = FALSE
+            overlay_file	= "AquaScrollbars/zero.png"
+            overlay_border	= { 0,0,8,8 }
+            overlay_stretch	= TRUE
+            orientation     = VERTICAL
+        }
+
+     image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= NORMAL
+	file	= "AquaScrollbars/vscroll_up.png"
+	stretch	= TRUE
+	arrow_direction	= UP
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= NORMAL
+	file	= "AquaScrollbars/vscroll_down.png"
+	stretch	= TRUE
+	arrow_direction	= DOWN
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= NORMAL
+	file	= "AquaScrollbars/hscroll_left.png"
+	stretch	= TRUE
+	arrow_direction	= LEFT
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= NORMAL
+	file	= "AquaScrollbars/hscroll_right.png"
+	stretch	= TRUE
+	arrow_direction	= RIGHT
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= PRELIGHT
+	file	= "AquaScrollbars/vscroll_up-prelight.png"
+	stretch	= TRUE
+	arrow_direction	= UP
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= PRELIGHT
+	file	= "AquaScrollbars/vscroll_down-prelight.png"
+	stretch	= TRUE
+	arrow_direction	= DOWN
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= PRELIGHT
+	file	= "AquaScrollbars/hscroll_left-prelight.png"
+	stretch	= TRUE
+	arrow_direction	= LEFT
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= PRELIGHT
+	file	= "AquaScrollbars/hscroll_right-prelight.png"
+	stretch	= TRUE
+	arrow_direction	= RIGHT
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= ACTIVE
+	file	= "AquaScrollbars/vscroll_up-prelight.png"
+	stretch	= TRUE
+	arrow_direction	= UP
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= ACTIVE
+	file	= "AquaScrollbars/vscroll_down-prelight.png"
+	stretch	= TRUE
+	arrow_direction	= DOWN
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= ACTIVE
+	file	= "AquaScrollbars/hscroll_left-prelight.png"
+	stretch	= TRUE
+	arrow_direction	= LEFT
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= ACTIVE
+	file	= "AquaScrollbars/hscroll_right-prelight.png"
+	stretch	= TRUE
+	arrow_direction	= RIGHT
+      }
+     image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= INSENSITIVE
+	file	= "AquaScrollbars/vscroll_up.png"
+	stretch	= TRUE
+	arrow_direction	= UP
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= INSENSITIVE
+	file	= "AquaScrollbars/vscroll_down.png"
+	stretch	= TRUE
+	arrow_direction	= DOWN
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= INSENSITIVE
+	file	= "AquaScrollbars/hscroll_left.png"
+	stretch	= TRUE
+	arrow_direction	= LEFT
+      }
+    image 
+      {
+	function	= STEPPER
+	recolorable	= TRUE
+	state		= INSENSITIVE
+	file	= "AquaScrollbars/hscroll_right.png"
+	stretch	= TRUE
+	arrow_direction	= RIGHT
+      }
+   }
+}
+
+class "GtkScrollbar" style "scrollbar"
+

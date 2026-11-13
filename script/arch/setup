@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+./script/install-dotfiles
+
+systemctl --user daemon-reload
+systemctl --user enable --now mount-eiga.service
