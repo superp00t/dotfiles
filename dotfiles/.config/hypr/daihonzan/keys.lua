@@ -4,8 +4,12 @@ local filemanager = 'thunar'
 local menu = 'hyprlauncher'
 
 -- see https://wiki.hypr.land/configuring/core/binds/ for more
+
+-- Win + Enter     | open terminal
 hl.bind(modkey .. ' + return', hl.dsp.exec_cmd(terminal))
+-- Win + q         | close window
 hl.bind(modkey .. ' + Q', hl.dsp.window.close())
+-- Win + Shift + q | quit hyprland
 hl.bind(modkey .. ' + SHIFT + Q',
     hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(modkey .. ' + E', hl.dsp.exec_cmd(filemanager))
@@ -35,13 +39,34 @@ hl.bind(modkey .. ' + Tab + h', hl.dsp.window.resize({ x = -10, y = 0, relative 
 hl.bind(modkey .. ' + Tab + k', hl.dsp.window.resize({ x = 0, y = -10, relative = true }), { repeating = true })
 hl.bind(modkey .. ' + Tab + j', hl.dsp.window.resize({ x = 0, y = 10, relative = true }), { repeating = true })
 
+-- Minimize: send the focused window to a hidden special workspace
+hl.bind('SUPER + N', hl.dsp.window.move({ workspace = 'special:scratch', follow = false }))
+
+-- Pop the focused window out of special:minimized into the current workspace
+hl.bind('SUPER + SHIFT + N', function()
+    local hidden = hl.get_workspace_windows('special:scratch')
+    local pick = hidden and hidden[#hidden]
+    if not pick then return end
+
+    hl.dispatch(hl.dsp.window.move({
+        window = pick,
+        workspace = hl.get_active_workspace(),
+        follow = true,
+    }))
+end)
+
+-- Show/hide the minimized windows
+hl.bind('SUPER + B', hl.dsp.workspace.toggle_special('scratch'))
+
+hl.bind('SUPER + F', hl.dsp.window.fullscreen({ mode = 'maximized', action = 'toggle' }))
+
 
 -- Switch workspaces with modkey + [0-9]
 -- Move active window to a workspace with modkey + SHIFT + [0-9]
 for i = 1, 10 do
     local key = i % 10 -- 10 maps to key 0
     hl.bind(modkey .. ' + ' .. key, hl.dsp.focus({ workspace = i }))
-    hl.bind(modkey .. ' + SHIFT + ' .. key, hl.dsp.window.move({ workspace = i }))
+    hl.bind(modkey .. ' + SHIFT + ' .. key, hl.dsp.window.move({ workspace = i, follow = false }))
 end
 
 -- Example special workspace (scratchpad)
