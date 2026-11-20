@@ -10,11 +10,13 @@ fi
 flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
 
 sudo pacman -S --needed --noconfirm \
+    btop \
     sshfs \
 	zsh \
     fzf \
 	git \
 	base-devel \
+    cmake \
 	rsync \
 	keyd \
     alacritty \
@@ -23,6 +25,8 @@ sudo pacman -S --needed --noconfirm \
 	tree-sitter-cli \
     lua-language-server \
 	firefox \
+    firefox-tridactyl \
+    firefox-ublock-origin \
 	keepassxc \
 	cliphist \
 	jdk-openjdk \
@@ -36,7 +40,8 @@ sudo pacman -S --needed --noconfirm \
     gimp \
     signal-desktop \
     thunar \
-    gnome-keyring
+    gnome-keyring \
+    flameshot
 
 # keyd must be enabled
 
