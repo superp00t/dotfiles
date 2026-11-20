@@ -1,0 +1,8 @@
+require('daihonzan.monitors')
+require('daihonzan.autostart')
+require('daihonzan.env')
+require('daihonzan.look_and_feel')
+require('daihonzan.misc')
+require('daihonzan.layers')
+require('daihonzan.keys')
+require('daihonzan.windows')
