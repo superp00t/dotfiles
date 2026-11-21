@@ -14,4 +14,5 @@ hl.on('hyprland.start', function()
 
     -- set file associations
     hl.exec_cmd('xdg-mime default imv-dir.desktop image/jpeg image/png image/gif image/webp image/svg+xml image/tiff')
+    hl.exec_cmd('xdg-mime default mpv.desktop video/mp4 video/x-matroska video/webm video/avi video/quicktime')
 end)

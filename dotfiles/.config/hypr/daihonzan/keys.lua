@@ -2,11 +2,15 @@ local modkey = 'SUPER' -- Sets "Windows" key as main modifier
 local terminal = 'alacritty'
 local filemanager = 'thunar'
 local menu = 'hyprlauncher'
+local chudbrowser = 'qutebrowser'
+local musicplayer = 'jellyfin-tui'
 
 -- see https://wiki.hypr.land/configuring/core/binds/ for more
 
 -- Win + Enter     | open terminal
 hl.bind(modkey .. ' + return', hl.dsp.exec_cmd(terminal))
+-- Win + w         | open chud browser
+hl.bind(modkey .. ' + w', hl.dsp.exec_cmd(chudbrowser))
 -- Win + q         | close window
 hl.bind(modkey .. ' + Q', hl.dsp.window.close())
 -- Win + Shift + q | quit hyprland
@@ -94,10 +98,14 @@ hl.bind('XF86MonBrightnessUp', hl.dsp.exec_cmd('brightnessctl -e4 -n2 set 5%+'),
 hl.bind('XF86MonBrightnessDown', hl.dsp.exec_cmd('brightnessctl -e4 -n2 set 5%-'), { locked = true, repeating = true })
 
 -- Requires playerctl
-hl.bind('XF86AudioNext', hl.dsp.exec_cmd('playerctl next'), { locked = true })
-hl.bind('Pause', hl.dsp.exec_cmd('playerctl play-pause'), { locked = true })
-hl.bind('XF86AudioPlay', hl.dsp.exec_cmd('playerctl play-pause'), { locked = true })
-hl.bind('XF86AudioPrev', hl.dsp.exec_cmd('playerctl previous'), { locked = true })
+-- hl.bind('XF86AudioNext', hl.dsp.exec_cmd('playerctl next'), { locked = true })
+
+-- Playpause musicplayer before playpausing something else
+hl.bind('Pause', hl.dsp.exec_cmd('playerctl play-pause --player=' .. musicplayer .. ' || playerctl play-pause'),
+    { locked = true })
+
+-- hl.bind('XF86AudioPlay', hl.dsp.exec_cmd('playerctl play-pause'), { locked = true })
+-- hl.bind('XF86AudioPrev', hl.dsp.exec_cmd('playerctl previous'), { locked = true })
 
 -- Switch to a new random wallpaper
 hl.bind(modkey .. ' + Print', hl.dsp.exec_cmd('~/.local/bin/set-random-wallpaper'))

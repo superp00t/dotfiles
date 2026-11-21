@@ -25,7 +25,6 @@ sudo pacman -S --needed --noconfirm \
 	tree-sitter-cli \
     lua-language-server \
 	firefox \
-    firefox-tridactyl \
     firefox-ublock-origin \
 	keepassxc \
 	cliphist \
@@ -41,12 +40,17 @@ sudo pacman -S --needed --noconfirm \
     signal-desktop \
     thunar \
     gnome-keyring \
-    flameshot
+    flameshot \
+    qutebrowser \
+    python-adblock
 
 # keyd must be enabled
 
-sudo systemctl enable keyd.service
-sudo systemctl start keyd.service
+sudo cp config/keyd/keyd.conf /etc/keyd/default.conf
+
+sudo systemctl enable --now keyd.service
+sudo systemctl restart keyd.service
+sudo keyd reload
 
 # use script/update-yay to install yay or update
 
