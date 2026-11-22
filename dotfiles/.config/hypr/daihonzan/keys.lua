@@ -1,5 +1,5 @@
 local modkey = 'SUPER' -- Sets "Windows" key as main modifier
-local terminal = 'alacritty'
+local terminal = 'ghostty'
 local filemanager = 'thunar'
 local menu = 'hyprlauncher'
 local chudbrowser = 'qutebrowser'
@@ -78,8 +78,14 @@ hl.bind(modkey .. ' + S', hl.dsp.workspace.toggle_special('magic'))
 hl.bind(modkey .. ' + SHIFT + S', hl.dsp.window.move({ workspace = 'special:magic' }))
 
 -- Scroll through existing workspaces with modkey + Page Up/Page Down
+hl.bind(modkey .. ' + page_up', hl.dsp.focus({ workspace = 'e-1' }))
+hl.bind(modkey .. ' + page_down', hl.dsp.focus({ workspace = 'e+1' }))
+-- Scroll through existing workspaces with modkey + [ / ]
 hl.bind(modkey .. ' + bracketright', hl.dsp.focus({ workspace = 'e+1' }))
 hl.bind(modkey .. ' + bracketleft', hl.dsp.focus({ workspace = 'e-1' }))
+-- Scroll through existing workspaces with modkey + scroll up/scroll down
+hl.bind(modkey .. ' + mouse_up', hl.dsp.focus({ workspace = 'e-1' }))
+hl.bind(modkey .. ' + mouse_down', hl.dsp.focus({ workspace = 'e+1' }))
 
 -- Move/resize windows with modkey + LMB/RMB and dragging
 hl.bind(modkey .. ' + mouse:272', hl.dsp.window.drag(), { mouse = true })
@@ -101,7 +107,19 @@ hl.bind('XF86MonBrightnessDown', hl.dsp.exec_cmd('brightnessctl -e4 -n2 set 5%-'
 -- hl.bind('XF86AudioNext', hl.dsp.exec_cmd('playerctl next'), { locked = true })
 
 -- Playpause musicplayer before playpausing something else
-hl.bind('Pause', hl.dsp.exec_cmd('playerctl play-pause --player=' .. musicplayer .. ' || playerctl play-pause'),
+hl.bind(
+    'Pause',
+    hl.dsp.exec_cmd('playerctl play-pause --player=' .. musicplayer .. ' || playerctl play-pause'),
+    { locked = true })
+
+hl.bind(
+    'KP_Left',
+    hl.dsp.exec_cmd('playerctl previous --player=' .. musicplayer .. ' || playerctl previous'),
+    { locked = true })
+
+hl.bind(
+    'KP_Right',
+    hl.dsp.exec_cmd('playerctl next --player=' .. musicplayer .. ' || playerctl next'),
     { locked = true })
 
 -- hl.bind('XF86AudioPlay', hl.dsp.exec_cmd('playerctl play-pause'), { locked = true })

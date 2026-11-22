@@ -50,7 +50,6 @@ sudo cp config/keyd/keyd.conf /etc/keyd/default.conf
 
 sudo systemctl enable --now keyd.service
 sudo systemctl restart keyd.service
-sudo keyd reload
 
 # use script/update-yay to install yay or update
 
