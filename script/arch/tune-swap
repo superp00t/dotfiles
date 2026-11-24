@@ -1,0 +1,48 @@
+#!/usr/bin/env bash
+# set -e
+
+# generate a swap file
+if [ ! -f "/swap.img" ]; then
+    echo "[wait] generating swap file at /swap.img"
+    sudo fallocate -l 16G /swap.img
+    sudo chmod 0600 /swap.img
+    sudo mkswap /swap.img
+else 
+    echo "[ok] swap file already exists"
+fi
+
+# disable zram if left over from archinstall
+if grep -q "/dev/zram" /proc/swaps; then
+    echo "[wait] disabling zram"
+    sudo swapoff /dev/zram0
+    sudo pacman -Rns zram-generator    
+    sudo rm -f /etc/systemd/zram-generator.conf
+else
+    echo "[ok] zram is already disabled"
+fi
+
+# activate the previously generated swap file
+if ! grep -q "/swap.img" /proc/swaps; then
+    echo "[wait] activating swap file"
+    sudo swapon /swap.img
+else
+    echo "[ok] swap file is already activated"
+fi
+
+# add swap to fstab so that it starts on boot
+if ! grep -q "/swap.img" /etc/fstab; then
+    echo "[wait] adding swapfile to fstab"
+    echo "/swap.img none swap sw 0 0" | sudo tee -a /etc/fstab
+else
+    echo "[ok] swap file is already set up in fstab"
+fi
+
+# configure swapiness value
+TARGET_SWAPPINESS=10
+if [ "$(sysctl -n vm.swappiness 2>/dev/null)" -eq "$TARGET_SWAPPINESS" ] 2>/dev/null; then
+    echo "[ok] vm.swappiness is already $TARGET_SWAPPINESS"
+else
+    echo "[wait] setting vm.swappiness to $TARGET_SWAPPINESS"
+    sudo sysctl vm.swappiness=$TARGET_SWAPPINESS
+    echo "vm.swappiness=$TARGET_SWAPPINESS" | sudo tee /etc/sysctl.d/99-swappiness.conf
+fi
