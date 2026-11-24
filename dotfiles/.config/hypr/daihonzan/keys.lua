@@ -111,6 +111,10 @@ hl.bind(
     'Pause',
     hl.dsp.exec_cmd('playerctl play-pause --player=' .. musicplayer .. ' || playerctl play-pause'),
     { locked = true })
+hl.bind(
+    'KP_Begin',
+    hl.dsp.exec_cmd('playerctl play-pause --player=' .. musicplayer .. ' || playerctl play-pause'),
+    { locked = true })
 
 hl.bind(
     'KP_Left',
