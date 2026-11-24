@@ -1,5 +1,7 @@
 # vi: ft=conf :
 
+shell-integration-features = ssh-terminfo
+
 # set font
 font-family = "RecMonoLinear Nerd Font Mono"
 font-size = 14
